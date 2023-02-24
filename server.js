@@ -103,9 +103,14 @@ const updateUser = (req,res)=>{
     if(req.params.id >10 || 0){
         res.send(" ROOMS ARE NOT AVAILABLE")
     }else{   
-      const update= users.find((user)=>user.id==req.params.id)
-        res.sent(update)
-    
+      const update= users.find((user)=>user.id==(req.params.id))
+      
+      update.id  = req.params.id;
+      update.name = req.body.name ;
+      update.time =req.body.time;
+      update.checkIn = req.body.checkIn;
+      update.checkOut= req.body.checkOut;
+      res.send(update)
     }}
 
 const userdelete = (req,res)=>{
