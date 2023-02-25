@@ -3,6 +3,8 @@ const express = require('express')
 
 const app = express()
 
+app.use(express())
+
 const users =[
     {
         id:1,
